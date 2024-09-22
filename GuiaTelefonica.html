@@ -1,0 +1,265 @@
+<html><head><base href="https://guiatelefonica.ciudad.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía Telefónica de Ciudad Ficticia</title>
+<style>
+  :root {
+    --bg-color: #f4f4f4;
+    --container-bg: #fff;
+    --text-color: #333;
+    --highlight-color: #3498db;
+    --border-color: #ddd;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--container-bg);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--text-color);
+  }
+
+  .business {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .business:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .business h2 {
+    margin-top: 0;
+    color: var(--highlight-color);
+  }
+
+  .phone {
+    font-weight: bold;
+  }
+
+  .phone a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .phone a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+  }
+
+  .description {
+    font-style: italic;
+    color: #7f8c8d;
+  }
+
+  .search {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+  }
+
+  #searchInput {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--highlight-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #2980b9;
+  }
+
+  .theme-switch {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+
+  .theme-switch label {
+    margin-right: 10px;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .slider {
+    background-color: var(--highlight-color);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Guía Telefónica de Ciudad Ficticia</h1>
+    
+    <div class="theme-switch">
+      <label for="theme-toggle">Modo oscuro</label>
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Buscar negocio...">
+      <button class="btn" id="searchBtn">Buscar</button>
+      <button class="btn" id="addBtn">Agregar</button>
+    </div>
+
+    <div id="businessList">
+      <div class="business">
+        <h2>Panadería "El Pan Dorado"</h2>
+        <p class="phone">Teléfono: <a href="tel:+34555123456">555-123-456</a></p>
+        <p class="description">Deliciosos panes artesanales y pasteles frescos todos los días.</p>
+      </div>
+      <div class="business">
+        <h2>Taller Mecánico "Ruedas Felices"</h2>
+        <p class="phone">Teléfono: <a href="tel:+34555789012">555-789-012</a></p>
+        <p class="description">Reparación y mantenimiento de vehículos con la mejor calidad y precio.</p>
+      </div>
+      <div class="business">
+        <h2>Floristería "Pétalos de Ensueño"</h2>
+        <p class="phone">Teléfono: <a href="tel:+34555345678">555-345-678</a></p>
+        <p class="description">Arreglos florales para todas las ocasiones, entrega a domicilio disponible.</p>
+      </div>
+      <div class="business">
+        <h2>Restaurante "Sabores del Mundo"</h2>
+        <p class="phone">Teléfono: <a href="tel:+34555901234">555-901-234</a></p>
+        <p class="description">Cocina internacional con los mejores ingredientes locales, ambiente acogedor.</p>
+      </div>
+      <div class="business">
+        <h2>Librería "El Rincón del Lector"</h2>
+        <p class="phone">Teléfono: <a href="tel:+34555567890">555-567-890</a></p>
+        <p class="description">Gran selección de libros, eventos literarios y rincón de lectura.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function searchBusinesses() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      const businesses = document.getElementsByClassName('business');
+      
+      Array.from(businesses).forEach(function(business) {
+        const businessName = business.getElementsByTagName('h2')[0].innerText.toLowerCase();
+        const businessDescription = business.getElementsByClassName('description')[0].innerText.toLowerCase();
+        
+        if (businessName.includes(searchTerm) || businessDescription.includes(searchTerm)) {
+          business.style.display = '';
+        } else {
+          business.style.display = 'none';
+        }
+      });
+    }
+
+    function addBusiness() {
+      const name = prompt("Ingrese el nombre del negocio:");
+      const phone = prompt("Ingrese el número de teléfono:");
+      const description = prompt("Ingrese una breve descripción:");
+
+      if (name && phone && description) {
+        const businessList = document.getElementById('businessList');
+        const newBusiness = document.createElement('div');
+        newBusiness.className = 'business';
+        newBusiness.innerHTML = `
+          <h2>${name}</h2>
+          <p class="phone">Teléfono: <a href="tel:+34${phone}">${phone}</a></p>
+          <p class="description">${description}</p>
+        `;
+        businessList.appendChild(newBusiness);
+      }
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+      if (document.body.classList.contains('dark-theme')) {
+        document.documentElement.style.setProperty('--bg-color', '#333');
+        document.documentElement.style.setProperty('--container-bg', '#444');
+        document.documentElement.style.setProperty('--text-color', '#f4f4f4');
+        document.documentElement.style.setProperty('--border-color', '#555');
+      } else {
+        document.documentElement.style.setProperty('--bg-color', '#f4f4f4');
+        document.documentElement.style.setProperty('--container-bg', '#fff');
+        document.documentElement.style.setProperty('--text-color', '#333');
+        document.documentElement.style.setProperty('--border-color', '#ddd');
+      }
+    }
+
+    document.getElementById('searchInput').addEventListener('input', searchBusinesses);
+    document.getElementById('searchBtn').addEventListener('click', searchBusinesses);
+    document.getElementById('addBtn').addEventListener('click', addBusiness);
+    document.getElementById('theme-toggle').addEventListener('change', toggleTheme);
+  </script>
+</body></html>
